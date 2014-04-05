@@ -1,0 +1,11 @@
+"A Bayesian Approach to Grounded Color Semantics"
+ANONYMOUS 
+
+
+This folder contains the LUX file in lux.xml
+In LUX xml, each child of the root node is a color label.  Each color label has as children the three dimensions.  Finally, in each dimension is the 6 parameters with standard deviations.
+There are two accompanying python files (lux.py and demo.py) that detail how to parse and use the model.
+
+NOTE: The model expects datum on the support set of (0,360) for HUE, (0,100) for Saturation, and (0,100) for Value
+Some of the labels have had their Hues Adjusted. Hue is a circle.  Some distributions (such as RED) straddle the 0/360 point.
+To convert, we used the atan2 function which converts to (-180,180).  However, each model is built to accept the support set (0,360) and convert to the atan2 adjusted support set. 
